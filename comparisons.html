@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML and CSS Visualizations - Comparisons</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!---Media Queries and custom styles-->
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Comparisons</h2>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="./index.html">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Plots</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="./1.html">1</a>
+        <a class="dropdown-item" href="./2.html">2</a>
+        <a class="dropdown-item" href="./3.html">3</a>
+        <a class="dropdown-item" href="./4.html">4</a></div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="./comparisons.html">Comparisons</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./data.html">Data</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Page Content -->
+
+<!-- Start of container -->
+    <div class="container">
+      <article class="description-content row">
+        <div class="col-12">
+          <h1 class="description-header">Comparison: Latitude vs X</h1>
+          <hr class="description-hr"/>
+          <p class="description-text">Click any plot to get an in-depth analysis.</p>
+        </div>
+        <div class="col-6">
+          <h2 class="comparison-header">vs. Max Temperature</h2>
+          <a href="./1.html"><img src="./img/Fig1.png" alt="Latitude vs. Max Temperature" class="comparison-image img-responsive"></a>
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-6">
+          <h2 class="comparison-header">vs. Humidity</h2>
+          <a href="./2.html"><img src="./img/Fig2.png" alt="Latitude vs. Humidity" class="comparison-image img-responsive"></a>
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-6">
+          <h2 class="comparison-header">vs. Cloudiness</h2>
+          <a href="./3.html"><img src="./img/Fig3.png" alt="Latitude vs. Cloudiness" class="comparison-image img-responsive"></a>
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-6">
+          <h2 class="comparison-header">vs. Wind Speed</h2>
+          <a href="./4.html"><img src="./img/Fig4.png" alt="Latitude vs. Wind Speed" class="comparison-image img-responsive"></a>
+        </div>
+      </article>
+    </div>
+    <!-- End of container  -->
+
+
+
+<!-- Footer -->
+  <div class="card-footer text-muted">© 2019 Copyright: Benyam Gizam</div>
+<!-- Footer -->
+</body>
+</html>

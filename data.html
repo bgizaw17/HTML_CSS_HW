@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML and CSS Visualizations - Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!---Media Queries and custom styles-->
+  <link rel="stylesheet" href="./style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Data</h2>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="./index.html">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Plots</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="./1.html">1</a>
+        <a class="dropdown-item" href="./2.html">2</a>
+        <a class="dropdown-item" href="./3.html">3</a>
+        <a class="dropdown-item" href="./4.html">4</a></div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./comparisons.html">Comparisons</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="./data.html">Data</a>
+    </li>
+  </ul>
+   
+  <!-- Page Content -->
+   
+
+  <script type="text/javascript">
+    function Upload() {
+        var fileUpload = document.getElementById("fileUpload");
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+        if (regex.test(fileUpload.value.toLowerCase())) {
+            if (typeof (FileReader) != "undefined") {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var table = document.createElement("table");
+                    var rows = e.target.result.split("\n");
+                    for (var i = 0; i < rows.length; i++) {
+                        var cells = rows[i].split(",");
+                        if (cells.length > 1) {
+                            var row = table.insertRow(-1);
+                            for (var j = 0; j < cells.length; j++) {
+                                var cell = row.insertCell(-1);
+                                cell.innerHTML = cells[j];
+                            }
+                        }
+                    }
+                    var dvCSV = document.getElementById("dvCSV");
+                    dvCSV.innerHTML = "";
+                    dvCSV.appendChild(table);
+                }
+                reader.readAsText(fileUpload.files[0]);
+            } else {
+                alert("This browser does not support HTML5.");
+            }
+        } else {
+            alert("Please upload a valid CSV file.");
+        }
+    }
+</script>
+<input type="file" id="fileUpload" />
+<input type="button" id="upload" value="Upload" onclick="Upload()" />
+    <div class="row">
+      <h5>The following table includes all of the data used for 
+          plotting during this project.</h5>
+    </div>
+<hr />
+<div id="dvCSV">
+</div>
+
+
+<!-- Footer -->
+  <div class="card-footer text-muted">© 2019 Copyright: Benyam Gizam</div>
+<!-- Footer -->
+</body>
+</body>
+</html>
